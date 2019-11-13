@@ -7,12 +7,14 @@ import { AppComponent } from './app.component';
 import { MaterialModule } from './material.module';
 import { ShowHotelComponent } from './components/showHotel/showHotel.component';
 import { DisplayHotelsListComponent } from './components/displayHotelsList/displayHotelsList.component';
+import { BookHotelComponent } from './components/bookHotel/bookHotel.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ShowHotelComponent,
-    DisplayHotelsListComponent
+    DisplayHotelsListComponent,
+    BookHotelComponent
   ],
   imports: [
     BrowserModule,
