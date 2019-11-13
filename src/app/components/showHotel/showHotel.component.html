@@ -1,0 +1,12 @@
+<mat-card class="showHotel">
+
+  <img src="https://material.angular.io/assets/img/examples/shiba2.jpg" height="80rem">
+  <div class="container">
+      <strong>{{hotel.name}}</strong>
+      <br><i class="material-icons" *ngFor="let star of stars" >star</i>
+      <br><i class="material-icons">room</i>{{hotel.location}}
+      <!-- <br>{{}} -->
+  </div>
+  
+</mat-card>
+

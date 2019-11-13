@@ -1,0 +1,9 @@
+.showHotel{
+    display: flex;
+    flex-direction: row;
+    margin: 1rem;
+    width: 40rem;
+}
+.container{
+    margin-left: 5rem;
+}
