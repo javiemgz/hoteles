@@ -14,7 +14,7 @@ export class DisplayHotelsListComponent implements OnInit {
   constructor(private hotelService:HotelsService) { }
 
   ngOnInit() {
-    this.hotels=this.hotelService.getHotels()
+    this.hotels = this.hotelService.getHotels()
   }
   asd(){
     return this.hotels[0]

@@ -1,23 +1,16 @@
 import { isUndefined } from 'util'
 
 export class Hotel {
-    name: string
-    score: number
-    location: string
-    roomsOptions: Type[]
-    extraServices: Type[]
-    selectedRoom: Type
-    photoURL: string
 
-    constructor(_name: string, _score: number, _location: string/*, _photoURL: string*/) {
-        this.name = _name
-        this.score = _score
-        this.location = _location
-    }
+    
 
-    calculateCost(days: number) {
-        const costPerDay = this.selectedRoom.cost
-        return costPerDay * days
+
+    constructor(public id: number,public name: string, public score: number, 
+        public location: string,public photoURL: string, 
+        public roomsAvailables:Type[], public extraServicesAvailables: Type[]){}
+
+    baseCost() {
+        return this.roomsAvailables.reduce((min, room) => room.cost < min ? room.cost : min, this.roomsAvailables[0].cost)
     }
 
     foldSum(foldableItem: Type[]) {
@@ -27,6 +20,5 @@ export class Hotel {
 
 
 export class Type {
-    typeName: string
-    cost: number
+    constructor(public typeName: string, public cost: number){}
 }

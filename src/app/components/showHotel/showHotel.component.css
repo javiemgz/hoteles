@@ -7,3 +7,11 @@
 .container{
     margin-left: 5rem;
 }
+.spacer{
+    flex: 1 1 auto;
+}
+.crop {
+    width: 200px;
+    height: 150px;
+    overflow: hidden;
+}
