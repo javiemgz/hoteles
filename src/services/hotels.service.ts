@@ -1,15 +1,16 @@
 import { Injectable } from '@angular/core';
-import { GenerateHotelsList } from 'src/domain/GenerateHotelsList';
+import { HotelRepository } from 'src/domain/HotelRepository';
 
 @Injectable({
   providedIn: 'root'
 })
 export class HotelsService {
+  private hotelRepo = HotelRepository.getInstance()
 
   constructor() { }
 
   getHotels(){
-    return GenerateHotelsList.getHotels()
+    return this.hotelRepo.getHotels()
   }
 
 }

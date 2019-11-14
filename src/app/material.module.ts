@@ -10,6 +10,7 @@ import {
     MatIconModule,
     MatDividerModule,
     MatListModule,
+    MatMenuModule,
 
 } from '@Angular/material'
 @NgModule({
@@ -23,6 +24,7 @@ import {
         MatIconModule,
         MatDividerModule,
         MatListModule,
+        MatMenuModule,
     ],
     exports: [
         MatButtonModule,
@@ -34,6 +36,7 @@ import {
         MatIconModule,
         MatDividerModule,
         MatListModule,
+        MatMenuModule,
     ]
 })
 export class MaterialModule { }
