@@ -8,6 +8,7 @@ import { MaterialModule } from './material.module';
 import { ShowHotelComponent } from './components/showHotel/showHotel.component';
 import { DisplayHotelsListComponent } from './components/displayHotelsList/displayHotelsList.component';
 import { BookHotelComponent } from './components/bookHotel/bookHotel.component';
+import { MatDatepickerModule } from '@Angular/material';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,7 @@ import { BookHotelComponent } from './components/bookHotel/bookHotel.component';
     MaterialModule,
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [MatDatepickerModule,  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {

@@ -22,7 +22,7 @@ export class HotelRepository {
     }
 
     getHotelById(id:number){
-        return this.hotelsAvailables.find(hotel=> hotel.id=id)
+        return this.hotelsAvailables.find(hotel=> hotel.id==id)
     }
 }
 

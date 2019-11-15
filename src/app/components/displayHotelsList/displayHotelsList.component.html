@@ -1,3 +1,1 @@
-<div class="cardContainer">
-  <app-showHotel *ngFor="let hotel of hotels" [hotel]='hotel'></app-showHotel>
-</div>
+<app-showHotel *ngFor="let hotel of hotels" [hotel]='hotel' (doClick)="redirectToBooking(hotel.id)" ></app-showHotel>

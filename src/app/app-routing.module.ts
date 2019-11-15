@@ -1,11 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { DisplayHotelsListComponent } from './components/displayHotelsList/displayHotelsList.component';
+import { BookHotelComponent } from './components/bookHotel/bookHotel.component';
 
 
 
 const routes: Routes = [
-  { path: '', component: DisplayHotelsListComponent},
+  {path: '', component: DisplayHotelsListComponent},
+  {path:'reserva/:id', component: BookHotelComponent }
 ];
 
 @NgModule({

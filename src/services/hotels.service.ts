@@ -9,8 +9,12 @@ export class HotelsService {
 
   constructor() { }
 
-  getHotels(){
+  getHotels(){ 
     return this.hotelRepo.getHotels()
+  }
+
+  getHotelById(id:number){
+    return this.hotelRepo.getHotelById(id)
   }
 
 }

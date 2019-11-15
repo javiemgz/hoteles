@@ -1,0 +1,30 @@
+.options{
+    width: 20rem;
+    display: flex;
+    flex-direction: row;
+}
+.optionsCard{
+    min-width: 19.5rem;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+}
+.radio-group{
+    display: flex;
+    flex-direction: column;
+    margin: 15px 0;
+}
+.checkbox{
+    display: flex;
+    flex-direction: row;
+}
+.spacer{
+    flex: 1 1 auto;
+}
+.footer{
+    display: flex;
+    flex-direction: row;
+}
+.cost{
+    margin-top: 3rem;
+    margin-right: 5rem;
+}

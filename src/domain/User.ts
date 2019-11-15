@@ -1,4 +1,4 @@
-export class Usuario{
+export class User{
     name:string
     lastName:string
 }

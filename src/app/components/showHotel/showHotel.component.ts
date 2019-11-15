@@ -1,4 +1,4 @@
-import { Component,Input, OnInit } from '@angular/core';
+import { Component,Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { Hotel } from 'src/domain/Hotel';
 
 @Component({
@@ -8,6 +8,7 @@ import { Hotel } from 'src/domain/Hotel';
 })
 export class ShowHotelComponent implements OnInit{
   @Input() hotel:Hotel 
+  @Output() doClick = new EventEmitter<boolean>();
   stars: number[]
   
   
@@ -16,5 +17,8 @@ export class ShowHotelComponent implements OnInit{
   
   ngOnInit(): void {
     this.stars = Array(this.hotel.score)
+  }
+  onClick(){
+    this.doClick.emit()
   }
 }

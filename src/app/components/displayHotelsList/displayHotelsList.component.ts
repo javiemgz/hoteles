@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HotelsService } from 'src/services/hotels.service';
 import { Hotel } from 'src/domain/Hotel';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-displayHotelsList',
@@ -11,13 +12,13 @@ export class DisplayHotelsListComponent implements OnInit {
 
   hotels:Hotel[]
 
-  constructor(private hotelService:HotelsService) { }
+  constructor(private hotelService:HotelsService,private router:Router) { }
 
   ngOnInit() {
     this.hotels = this.hotelService.getHotels()
   }
-  asd(){
-    return this.hotels[0]
+  
+  redirectToBooking(id:number){
+    this.router.navigate (['/reserva',id])
   }
-
 }
