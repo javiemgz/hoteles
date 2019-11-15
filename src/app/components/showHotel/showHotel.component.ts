@@ -8,7 +8,7 @@ import { Hotel } from 'src/domain/Hotel';
 })
 export class ShowHotelComponent implements OnInit{
   @Input() hotel:Hotel 
-  @Output() doClick = new EventEmitter<boolean>();
+  @Output() doClick = new EventEmitter();
   stars: number[]
   
   

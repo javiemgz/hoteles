@@ -2,8 +2,9 @@
 <div class="options">
     <mat-card class="optionsCard">
         <mat-card-title>Habitaciones:</mat-card-title>
-        <mat-radio-group aria-labelledby="radio-group-label" class="radio-group" >
-            <mat-radio-button (click)="select(room)" class="radio-button" *ngFor="let room of selectedHotel.roomsAvailables" [value]="room">
+        <mat-radio-group aria-labelledby="radio-group-label" class="radio-group">
+            <mat-radio-button (click)="select(room)" class="radio-button"
+                *ngFor="let room of selectedHotel.roomsAvailables" [value]="room">
                 {{room.typeName}}: <strong>${{room.cost}}</strong>
             </mat-radio-button>
         </mat-radio-group>
@@ -11,7 +12,8 @@
     </mat-card>
     <mat-card class="optionsCard">
         <mat-card-title>Servicios Adicionales:</mat-card-title>
-        <mat-checkbox class="checkbox" (change)="onSelectionChange(extraService,option.checked)" *ngFor="let extraService of selectedHotel.extraServicesAvailables" #option>
+        <mat-checkbox class="checkbox" (change)="onSelectionChange(extraService,option.checked)"
+            *ngFor="let extraService of selectedHotel.extraServicesAvailables" #option>
             {{extraService.typeName}}: <strong>${{extraService.cost}} </strong>
         </mat-checkbox>
     </mat-card>
@@ -21,17 +23,18 @@
 <mat-card class="footer">
     <div>
         <mat-form-field>
-            <input matInput [matDatepicker]="picker" placeholder="Choose a date">
-            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-            <mat-datepicker #picker></mat-datepicker>
+            <mat-label>Fecha desde</mat-label>
+            <input matInput [matDatepicker]="pickerFrom" placeholder="Seleccione fecha" ([ngModel])="fecha">
+            <mat-datepicker-toggle matSuffix [for]="pickerFrom"></mat-datepicker-toggle>
+            <mat-datepicker #pickerFrom></mat-datepicker>
         </mat-form-field><br>
         <mat-form-field>
             <input matInput [matDatepicker]="picker2" placeholder="Choose a date">
-            <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+            <mat-datepicker-toggle matSuffix [for]="picker2" ([ngModel])="bookig.startDate"></mat-datepicker-toggle>
             <mat-datepicker #picker2></mat-datepicker>
         </mat-form-field>
     </div>
     <span class="spacer"></span>
-    <strong class="cost" *ngIf="hasSelectedRoom()">Precio final: ${{getCost()}}</strong>
-    <button mat-raised-button color="primary" (click)="o()">Reservar</button>
+    <strong class="cost" *ngIf="canSaveBook()">Precio final: ${{getCost()}}</strong>
+    <button mat-raised-button color="warn" (click)="saveBooking()" [disabled]="!canSaveBook()">Reservar</button>
 </mat-card>
