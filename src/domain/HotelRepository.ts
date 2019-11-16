@@ -31,8 +31,8 @@ export class HotelRepository {
 
 
 //types of rooms 
-const winterSuitesTypes = [new Type("Doble Economica", 2500), new Type("Simple", 2100), new Type("Cuadruple", 5000),]
-const fourSeasonTypes = [new Type("Doble de lujo", 5000), new Type("Doble", 4000), new Type("Doble VIP", 10000),]
+const winterSuitesTypes = [new Type("Doble", 3800), new Type("Triple", 4150), new Type("Cuadruple", 5000), new Type("Quintuple", 5700),]
+const fourSeasonTypes = [new Type("Doble STD", 5000), new Type("Simple Deluxe", 5800), new Type("Doble Deluxe", 8000),]
 const lasHayasTypes = [new Type("sarasa", 1000), new Type("barat", 2100), new Type("carelli", 5000),]
 const tierraColoradaTypes = [new Type("sarasa", 2500), new Type("barat", 2250), new Type("carelli", 5000),]
 const nadubayTypes = [new Type("sarasa", 2500), new Type("barat", 1900), new Type("carelli", 5000),]
