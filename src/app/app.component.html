@@ -1,10 +1,12 @@
 <mat-toolbar color="primary">
-  <img src="../assets/hotel.png" width="50rem">
-  <img src="../assets/logo-eh.png" width="50rem">
+  <span [routerLink]="['/']">
+    <img src="../assets/hotel.png" width="50rem">
+    <img src="../assets/logo-eh.png" width="50rem">
+  </span>
   <span class="spacer"></span>
   <button mat-button [matMenuTriggerFor]="menu">{{username}} <mat-icon>keyboard_arrow_down</mat-icon></button>
   <mat-menu #menu="matMenu">
-    <button mat-menu-item>Reservas</button>
+    <button mat-menu-item [routerLink]="['/']">Reservas</button>
   </mat-menu>
 </mat-toolbar>
 <div class="cardContainer">

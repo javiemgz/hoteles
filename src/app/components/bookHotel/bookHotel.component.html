@@ -40,6 +40,6 @@
     <span class="spacer"></span>
     <div *ngIf="!dateRageNotSelected() && !roomNotSelected()">
         <strong class="cost">Precio final: ${{this.booking.bookTotalCost()}}</strong>
-        <button mat-raised-button color="warn" (click)="saveBooking()">Reservar</button>
+        <button mat-raised-button color="warn" (click)="saveBooking()" [routerLink]="['/']">Reservar</button>
     </div>    
 </mat-card>
