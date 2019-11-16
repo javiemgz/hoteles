@@ -7,8 +7,8 @@ export class Booking {
     hotelId: number
     selectedRoom: Type
     selectedExtraServices: Type[] = []
-    startDate:Date = new Date()
-    finishDate:Date = new Date()
+    startDate 
+    finishDate 
 
 
     bookTotalCost() {
@@ -16,8 +16,7 @@ export class Booking {
     }
 
     amountOfDays(){
-        const days = 0//this.finishDate.diff(this.startDate,'days')
-        return days<=0 ? 1 : days
+        return this.finishDate.diff(this.startDate,'days')
     }
 
     selectedServicesCost() {

@@ -1,11 +1,10 @@
 import { Booking } from './Booking'
 
-class  User{
+export class  User{
+    name = "JaviG"
+    bookings:Booking[] =[]
 
-    name = "Pipo Fuentes"
-    bookings:Booking[]
     addBooking(newBook:Booking){
         this.bookings.push(newBook)
     }
 }
-export const user = new User()

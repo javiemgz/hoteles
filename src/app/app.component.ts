@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { user } from 'src/domain/User';
+import { UserService } from 'src/services/User.service';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +7,8 @@ import { user } from 'src/domain/User';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  user=user
+  constructor(private userService :UserService){}
+
+  username:string = this.userService.getUserName()
   title = 'Parcial Gómez';
 }
