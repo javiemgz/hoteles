@@ -1,12 +1,12 @@
-<div class="detailsContainer" *ngFor="let book of bookings | async">
+<div class="detailsContainer" *ngFor="let book of bookings">
     <app-showHotel [hotelId]='book.hotelId' [ShowBaseCost]="false"></app-showHotel>
-    <mat-card>
-        {{book.startDate.format("DD-MM-YYYY")}} - {{book.finishDate.format("DD-MM-YYYY")}}<br>
+    <mat-card><br>
+        {{book.startDate.format("DD-MM-YYYY")}} - {{book.finishDate.format("DD-MM-YYYY")}}<br><br>
         {{book.amountOfDays()}} noche<span *ngIf="book.amountOfDays()>1">s</span>
         <h2>${{book.bookTotalCost()}}</h2>
     </mat-card>
 
 </div>
-<div *ngIf="!book || async">
+<div *ngIf="withoutBookings()">
     <h2>No ha realizado ninguna reserva</h2>
 </div>

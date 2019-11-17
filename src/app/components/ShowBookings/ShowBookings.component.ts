@@ -9,12 +9,16 @@ import { Booking } from 'src/domain/Booking';
 })
 export class ShowBookingsComponent implements OnInit {
 
-  constructor(private userService:UserService) { }
+  constructor(private userService: UserService) { }
 
-  bookings
+  bookings:Booking[]
 
-  ngOnInit() { 
-    this.bookings = this.userService.getBookings()
+  async ngOnInit() {
+    this.bookings = await this.userService.getBookings()
+  }
+
+  withoutBookings() {
+    return this.bookings.length == 0
   }
 
 }
