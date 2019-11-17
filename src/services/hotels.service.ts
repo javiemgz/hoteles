@@ -13,11 +13,11 @@ export class HotelsService {
 
   constructor() { } 
 
-  getHotels() {
+  async getHotels() {
     return this.hotelRepo.getHotels()
   }
 
-  getHotelById(id: number) {
+  async getHotelById(id: number) {
     return this.hotelRepo.getHotelById(id)
   }
 }

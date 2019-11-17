@@ -1,1 +1,1 @@
-<app-showHotel *ngFor="let hotel of hotels" [hotel]='hotel' (doClick)="redirectToBooking(hotel.id)" ></app-showHotel>
+<app-showHotel *ngFor="let hotel of hotels" [hotelId]='hotel.id' [routerLink]="['/reserva',hotel.id]" ></app-showHotel>

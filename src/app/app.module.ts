@@ -10,13 +10,15 @@ import { DisplayHotelsListComponent } from './components/displayHotelsList/displ
 import { BookHotelComponent } from './components/bookHotel/bookHotel.component';
 import { MatDatepickerModule } from '@Angular/material';
 import { FormsModule } from '@angular/forms';
+import { ShowBookingsComponent } from './components/ShowBookings/ShowBookings.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ShowHotelComponent,
     DisplayHotelsListComponent,
-    BookHotelComponent
+    BookHotelComponent,
+    ShowBookingsComponent,
   ],
   imports: [
     BrowserModule,

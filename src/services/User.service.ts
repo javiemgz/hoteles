@@ -12,11 +12,16 @@ constructor() {
  }
 
   user:User
-  getUserName(){
+
+  async getUserName(){
     return this.user.name
   }
 
-  saveBooking(newBooking: Booking) {
+  async saveBooking(newBooking: Booking) {
     this.user.addBooking(newBooking)
+  }
+  
+  async getBookings(){
+    return this.user.bookings
   }
 }

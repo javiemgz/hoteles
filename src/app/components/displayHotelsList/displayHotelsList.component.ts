@@ -14,8 +14,8 @@ export class DisplayHotelsListComponent implements OnInit {
 
   constructor(private hotelService:HotelsService,private router:Router) { }
 
-  ngOnInit() {
-    this.hotels = this.hotelService.getHotels()
+  async ngOnInit() {
+     this.hotels = await this.hotelService.getHotels()
   }
   
   redirectToBooking(id:number){

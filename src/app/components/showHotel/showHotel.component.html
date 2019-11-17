@@ -1,4 +1,4 @@
-<mat-card class="showHotel" (click)="onClick()">
+<mat-card class="showHotel" *ngIf="hotel || async">
 
   <div class="crop">
     <img src="{{hotel.photoURL}}" height="150rem">
@@ -6,9 +6,10 @@
   <div class="container">
       <mat-card-title>{{hotel.name}}</mat-card-title>
       <br><mat-icon color="accent" *ngFor="let star of stars" >star</mat-icon>
+        <mat-icon color="accent" *ngFor="let star of starsOutlined" >star_border</mat-icon>
       <h5><mat-icon color="warn">room</mat-icon>{{hotel.location}}</h5>
   </div>
-  <span class="spacer"></span><strong>${{hotel.baseCost()}}</strong>
+  <span class="spacer"></span><strong *ngIf="ShowBaseCost">${{hotel.baseCost()}}</strong>
   
 </mat-card>
 

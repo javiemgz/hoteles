@@ -1,0 +1,8 @@
+.detailsContainer{
+    display: flex;
+    flex-direction: row;
+}
+mat-card{
+    margin:1rem;
+    margin-left:-2rem;
+}

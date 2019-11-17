@@ -7,7 +7,7 @@ import { isUndefined } from 'util';
 import { Type } from '../../../domain/Hotel'
 import * as moment from 'moment';
 import { MomentDateAdapter } from '@angular/material-moment-adapter';
-import { MAT_DATE_FORMATS, DateAdapter, MAT_DATE_LOCALE } from '@Angular/material';
+import { MAT_DATE_FORMATS, DateAdapter, MAT_DATE_LOCALE, MatSnackBar } from '@Angular/material';
 import { CompileStylesheetMetadata } from '@angular/compiler';
 import { UserService } from 'src/services/User.service';
 
@@ -41,25 +41,25 @@ export class BookHotelComponent implements OnInit {
   booking = new Booking()
   minDateFrom = moment({})
 
-  constructor(private route: ActivatedRoute, private router: Router, private hotelService: HotelsService,private userService:UserService) { }
+  constructor(private route: ActivatedRoute, private router: Router, private hotelService: HotelsService, private userService: UserService, private _snackbar:MatSnackBar) { }
 
-  ngOnInit() {
+  async ngOnInit() {
     const hotelId = this.route.snapshot.params.id
     this.booking.hotelId = hotelId
-    this.selectedHotel = this.hotelService.getHotelById(hotelId)
+    this.selectedHotel = await this.hotelService.getHotelById(hotelId)
   }
-  
-  minDateTo(){ 
+
+  minDateTo() {
     const date = moment(this.booking.startDate)
-    return date.add(1,'days')
+    return date.add(1, 'days')
   }
 
   roomNotSelected() {
-    return isUndefined(this.booking.selectedRoom) 
+    return isUndefined(this.booking.selectedRoom)
   }
 
-  dateRageNotSelected(){
-    return  isUndefined(this.booking.finishDate)
+  dateToNotSelected() {
+    return isUndefined(this.booking.finishDate)
   }
 
   select(room: Type) {
@@ -72,5 +72,15 @@ export class BookHotelComponent implements OnInit {
 
   saveBooking() {
     this.userService.saveBooking(this.booking)
+    this._snackbar.open("Reserva realizada con exito", "x", {
+      duration: 3500,
+    });
+  }
+
+  maxDateFrom() {
+    if (!this.dateToNotSelected()) {
+      const date = moment(this.booking.finishDate)
+      return date.add(-1, 'days')
+    }
   }
 }

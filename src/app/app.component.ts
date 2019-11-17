@@ -9,6 +9,6 @@ import { UserService } from 'src/services/User.service';
 export class AppComponent {
   constructor(private userService :UserService){}
 
-  username:string = this.userService.getUserName()
+  username = this.userService.getUserName()
   title = 'Parcial Gómez';
 }
