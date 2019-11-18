@@ -26,14 +26,14 @@
         <mat-form-field>
             <mat-label>Fecha Desde:</mat-label>
             <input matInput [matDatepicker]="pickerFrom" [min]="minDateFrom" [max]="maxDateFrom()" placeholder="Seleccione fecha Desde"
-                [(ngModel)]="booking.startDate">
+                [(ngModel)]="booking.startDate" [readonly]="true">
             <mat-datepicker-toggle matSuffix [for]="pickerFrom"></mat-datepicker-toggle>
             <mat-datepicker #pickerFrom></mat-datepicker>
         </mat-form-field><br>
         <mat-form-field >
             <mat-label>Fecha Hasta:</mat-label>
             <input matInput [matDatepicker]="pickerTo" [min]="minDateTo()" placeholder="Seleccione fecha Hasta"
-                [(ngModel)]="booking.finishDate" [disabled]=(!booking.startDate)>
+                [(ngModel)]="booking.finishDate" [disabled]=(!booking.startDate) [readonly]="true">
             <mat-datepicker-toggle matSuffix [for]="pickerTo"></mat-datepicker-toggle>
             <mat-datepicker #pickerTo></mat-datepicker>
         </mat-form-field>
