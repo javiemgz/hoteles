@@ -11,24 +11,30 @@ import { BookHotelComponent } from './components/bookHotel/bookHotel.component';
 import { MatDatepickerModule } from '@Angular/material';
 import { FormsModule } from '@angular/forms';
 import { ShowBookingsComponent } from './components/ShowBookings/ShowBookings.component';
+import { StarRatingComponent } from './components/starRating/starRating.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    ShowHotelComponent,
-    DisplayHotelsListComponent,
-    BookHotelComponent,
-    ShowBookingsComponent,
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    MaterialModule,
-    BrowserAnimationsModule,
-    FormsModule,
-  ],
-  providers: [MatDatepickerModule,  ],
-  bootstrap: [AppComponent]
+   declarations: [
+      AppComponent,
+      ShowHotelComponent,
+      DisplayHotelsListComponent,
+      BookHotelComponent,
+      ShowBookingsComponent,
+      StarRatingComponent
+   ],
+   imports: [
+      BrowserModule,
+      AppRoutingModule,
+      MaterialModule,
+      BrowserAnimationsModule,
+      FormsModule,
+   ],
+   providers: [
+      MatDatepickerModule
+   ],
+   bootstrap: [
+      AppComponent
+   ]
 })
 export class AppModule {
 }

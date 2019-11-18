@@ -28,4 +28,8 @@ export class Booking {
     deleteExtraOption(extraOption: Type) {
         _.remove(this.selectedExtraServices, extraOption)
     }
+
+    isActive(){
+        return moment({}).diff(this.startDate,'days')<=0
+    }
 } 

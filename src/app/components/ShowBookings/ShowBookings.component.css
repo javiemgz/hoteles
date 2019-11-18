@@ -1,8 +1,12 @@
 .detailsContainer{
     display: flex;
     flex-direction: row;
+    padding-right: 1rem;
+    padding-top: 1rem;
 }
 mat-card{
-    margin:1rem;
-    margin-left:-2rem;
+    display: flex;
+    flex-direction: row;
+    margin: 1rem;
+    padding: 0.3rem;
 }

@@ -1,5 +1,6 @@
+<mat-card class="optionsCard">
 <app-showHotel *ngIf="selectedHotel" [hotelId]='selectedHotel.id'></app-showHotel>
-
+</mat-card>
 <div class="options">
     <mat-card class="optionsCard">
         <mat-card-title>Habitaciones:</mat-card-title>
@@ -29,10 +30,10 @@
             <mat-datepicker-toggle matSuffix [for]="pickerFrom"></mat-datepicker-toggle>
             <mat-datepicker #pickerFrom></mat-datepicker>
         </mat-form-field><br>
-        <mat-form-field *ngIf=(booking.startDate)>
+        <mat-form-field >
             <mat-label>Fecha Hasta:</mat-label>
             <input matInput [matDatepicker]="pickerTo" [min]="minDateTo()" placeholder="Seleccione fecha Hasta"
-                [(ngModel)]="booking.finishDate">
+                [(ngModel)]="booking.finishDate" [disabled]=(!booking.startDate)>
             <mat-datepicker-toggle matSuffix [for]="pickerTo"></mat-datepicker-toggle>
             <mat-datepicker #pickerTo></mat-datepicker>
         </mat-form-field>

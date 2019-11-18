@@ -11,7 +11,7 @@ export class ShowBookingsComponent implements OnInit {
 
   constructor(private userService: UserService) { }
 
-  bookings:Booking[]
+  bookings:Booking[] = []
 
   async ngOnInit() {
     this.bookings = await this.userService.getBookings()
@@ -19,6 +19,9 @@ export class ShowBookingsComponent implements OnInit {
 
   withoutBookings() {
     return this.bookings.length == 0
+  }
+  cancelBook(booking:Booking){
+    this.userService.cancelBook(booking)
   }
 
 }
