@@ -1,6 +1,7 @@
 import { Booking } from './Booking'
 import { Type } from './Hotel'
 import * as moment from 'moment'
+import * as _ from 'lodash'
 
 export class  User{
     name = "JaviG"
@@ -8,6 +9,9 @@ export class  User{
 
     addBooking(newBook:Booking){
         this.bookings.push(newBook)
+    }
+    cancelBook(booking:Booking){
+        _.remove(this.bookings, booking)
     }
 }
 
