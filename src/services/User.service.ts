@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { User } from 'src/domain/User';
 import { Booking } from 'src/domain/Booking';
-import * as _ from 'lodash'
 
 @Injectable({
   providedIn: 'root'
@@ -25,7 +24,7 @@ constructor() {
   async getBookings(){
     return this.user.bookings
   }
-  cancelBook(booking:Booking){
-      _.remove(this.user.bookings, booking)
+  async cancelBook(booking:Booking){
+    this.user.cancelBook(booking)
   }
 }
