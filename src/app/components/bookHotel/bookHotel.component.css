@@ -36,3 +36,8 @@ button{
 .costCard{
     margin-left: 15rem;
 }
+.error{
+    display: flex;
+    flex-direction: column;
+    margin-right: 6rem;
+}

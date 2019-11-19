@@ -1,5 +1,5 @@
 <mat-card class="optionsCard">
-<app-showHotel *ngIf="selectedHotel" [hotelId]='selectedHotel.id'></app-showHotel>
+    <app-showHotel *ngIf="selectedHotel" [hotelId]='selectedHotel.id'></app-showHotel>
 </mat-card>
 <div class="options">
     <mat-card class="optionsCard">
@@ -25,12 +25,12 @@
     <div>
         <mat-form-field>
             <mat-label>Fecha Desde:</mat-label>
-            <input matInput [matDatepicker]="pickerFrom" [min]="minDateFrom" [max]="maxDateFrom()" placeholder="Seleccione fecha Desde"
-                [(ngModel)]="booking.startDate" [readonly]="true">
+            <input matInput [matDatepicker]="pickerFrom" [min]="minDateFrom" [max]="maxDateFrom()"
+                placeholder="Seleccione fecha Desde" [(ngModel)]="booking.startDate" [readonly]="true">
             <mat-datepicker-toggle matSuffix [for]="pickerFrom"></mat-datepicker-toggle>
             <mat-datepicker #pickerFrom></mat-datepicker>
         </mat-form-field><br>
-        <mat-form-field >
+        <mat-form-field>
             <mat-label>Fecha Hasta:</mat-label>
             <input matInput [matDatepicker]="pickerTo" [min]="minDateTo()" placeholder="Seleccione fecha Hasta"
                 [(ngModel)]="booking.finishDate" [disabled]=(!booking.startDate) [readonly]="true">
@@ -39,7 +39,17 @@
         </mat-form-field>
     </div>
     <span class="spacer"></span>
-        <strong class="cost" *ngIf="!dateToNotSelected() && !roomNotSelected()">Precio final: ${{this.booking.bookTotalCost()}}</strong>
-        <button mat-raised-button color="warn" (click)="saveBooking()" [disabled]="dateToNotSelected() || roomNotSelected()" [routerLink]="['/']">Reservar</button>
- 
+    <div *ngIf="!dateToNotSelected() && !roomNotSelected(); else incompleteData">
+        <strong class="cost">Precio final: ${{this.booking.bookTotalCost()}}</strong>
+        <button mat-raised-button color="warn" (click)="saveBooking()" [routerLink]="['/']">Reservar</button>
+    </div>
+
 </mat-card>
+
+<ng-template #incompleteData>
+    <div class="error">
+        <strong>FALTA SELECCIONAR:</strong><br>
+        <mat-error *ngIf="roomNotSelected()"><strong>-Habitacion</strong></mat-error><br>
+        <mat-error *ngIf="dateToNotSelected()"><strong>-Fechas de la reserva</strong></mat-error>
+    </div>
+</ng-template>
