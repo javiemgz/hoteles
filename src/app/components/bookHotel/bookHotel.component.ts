@@ -34,7 +34,7 @@ export const MY_FORMATS = {
 
     { provide: MAT_DATE_FORMATS, useValue: MY_FORMATS },
   ],
-})
+})    
 export class BookHotelComponent implements OnInit {
 
   selectedHotel: Hotel
@@ -62,7 +62,7 @@ export class BookHotelComponent implements OnInit {
     return isUndefined(this.booking.finishDate)
   }
 
-  select(room: Type) {
+  selectRoom(room: Type) {
     this.booking.selectedRoom = room
   }
 

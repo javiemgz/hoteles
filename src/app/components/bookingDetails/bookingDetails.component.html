@@ -1,0 +1,6 @@
+<strong>Desde: {{booking.startDate.format("DD-MM-YYYY")}} <br>
+  Hasta: {{booking.finishDate.format("DD-MM-YYYY")}}
+</strong><br>
+<strong>Habitación: {{booking.selectedRoom.typeName}}</strong><br>
+<strong>{{booking.amountOfDays()}} Noche<span *ngIf="booking.amountOfDays()>1">s</span></strong>
+<h2>Precio: ${{booking.bookTotalCost()}}</h2>

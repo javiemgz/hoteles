@@ -1,11 +1,9 @@
 
-    <mat-card class="detailsContainer" *ngFor="let book of bookings">
-        <app-showHotel [hotelId]='book.hotelId' [ShowBaseCost]="false"></app-showHotel>
+    <mat-card class="detailsContainer" *ngFor="let booking of bookings">
+        <app-showHotel [hotelId]='booking.hotelId' [ShowBaseCost]="false"></app-showHotel>
         <div>
-            {{book.startDate.format("DD-MM-YYYY")}} - {{book.finishDate.format("DD-MM-YYYY")}}<br><br>
-            {{book.amountOfDays()}} noche<span *ngIf="book.amountOfDays()>1">s</span>
-            <h3>${{book.bookTotalCost()}}</h3>
-            <mat-card-actions><button *ngIf="book.isActive()" mat-raised-button color="warn" (click)="cancelBook(book)">Cancelar</button></mat-card-actions>
+            <app-bookingDetails [booking]='booking'></app-bookingDetails>
+            <mat-card-actions><button *ngIf="booking.isCancelable()" mat-raised-button color="warn" (click)="cancelBook(booking)">Cancelar</button></mat-card-actions>
         </div>
     </mat-card>
 

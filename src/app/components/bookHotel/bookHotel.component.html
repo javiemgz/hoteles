@@ -4,11 +4,11 @@
 
 
 <mat-horizontal-stepper linear #stepper>
-    <mat-step>
+    <mat-step [completed]="!roomNotSelected()">
         <ng-template matStepLabel>Habitación</ng-template>
-
+        <mat-card-title>Seleccione una habitacion:</mat-card-title>
         <mat-radio-group aria-labelledby="radio-group-label" class="radio-group">
-            <mat-radio-button (click)="select(room)" class="radio-button"
+            <mat-radio-button (click)="selectRoom(room)" class="radio-button"
                 *ngFor="let room of selectedHotel?.roomsAvailables" [value]="room">
                 {{room.typeName}}: <strong>${{room.cost}}</strong>
             </mat-radio-button>
@@ -17,9 +17,9 @@
         <span class="spacer"></span>
         <button mat-raised-button color="primary" [disabled]="roomNotSelected()" matStepperNext>Siguiente</button>
     </mat-step>
-    <mat-step>
-
+    <mat-step optional>
         <ng-template matStepLabel>Servicios extras</ng-template>
+        <mat-card-title>Seleccione servicios extra si desea:</mat-card-title>
         <mat-checkbox class="checkbox" (change)="onSelectionChange(extraService,option.checked)"
             *ngFor="let extraService of selectedHotel?.extraServicesAvailables" #option>
             {{extraService.typeName}}:<strong>${{extraService.cost}} </strong>
@@ -27,7 +27,8 @@
         <button mat-raised-button color="primary" matStepperNext>Siguiente</button>
 
     </mat-step>
-    <mat-step>
+    <mat-step [completed]="!dateToNotSelected()">
+        <mat-card-title>Seleccione las fechas de inicio y fin de la reserva:</mat-card-title>
         <ng-template matStepLabel>Fechas de hospedaje</ng-template>
         <div>
             <mat-form-field>
@@ -46,12 +47,12 @@
             </mat-form-field>
         </div>
         <button mat-raised-button color="primary" [disabled]="dateToNotSelected()" matStepperNext>Siguiente</button>
-
     </mat-step>
     <mat-step>
         <ng-template matStepLabel>Finalizado</ng-template>
-        <h2 *ngIf="!dateToNotSelected()">Precio final: ${{this.booking.bookTotalCost()}}
-        </h2>
+        <div *ngIf="!dateToNotSelected() && !roomNotSelected()">
+            <app-bookingDetails [booking]='booking'></app-bookingDetails>
+        </div>
         <button mat-raised-button color="primary" (click)="saveBooking()"
             [disabled]="dateToNotSelected() || roomNotSelected()" [routerLink]="['/']">Reservar</button>
 

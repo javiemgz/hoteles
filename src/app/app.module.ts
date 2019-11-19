@@ -12,6 +12,7 @@ import { MatDatepickerModule } from '@Angular/material';
 import { FormsModule } from '@angular/forms';
 import { ShowBookingsComponent } from './components/ShowBookings/ShowBookings.component';
 import { StarRatingComponent } from './components/starRating/starRating.component';
+import { BookingDetailsComponent } from './components/bookingDetails/bookingDetails.component';
 
 @NgModule({
    declarations: [
@@ -20,7 +21,8 @@ import { StarRatingComponent } from './components/starRating/starRating.componen
       DisplayHotelsListComponent,
       BookHotelComponent,
       ShowBookingsComponent,
-      StarRatingComponent
+      StarRatingComponent,
+      BookingDetailsComponent,
    ],
    imports: [
       BrowserModule,

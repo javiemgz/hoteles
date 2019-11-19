@@ -29,7 +29,7 @@ export class Booking {
         _.remove(this.selectedExtraServices, extraOption)
     }
 
-    isActive(){
-        return moment({}).diff(this.startDate,'days')<=0
+    isCancelable(){
+        return moment({}).diff(this.startDate,'week')<0
     }
 } 
