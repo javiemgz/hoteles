@@ -1,4 +1,4 @@
-import { NgModule } from '@Angular/core'
+import { NgModule } from '@angular/core'
 
 import {
     MatButtonModule,
@@ -15,7 +15,7 @@ import {
     MatCheckboxModule,
     MatDatepickerModule,
     MatNativeDateModule, 
-} from '@Angular/material'
+} from '@angular/material'
 
 @NgModule({
     imports: [

@@ -8,7 +8,7 @@ import { MaterialModule } from './material.module';
 import { ShowHotelComponent } from './components/showHotel/showHotel.component';
 import { DisplayHotelsListComponent } from './components/displayHotelsList/displayHotelsList.component';
 import { BookHotelComponent } from './components/bookHotel/bookHotel.component';
-import { MatDatepickerModule } from '@Angular/material';
+import { MatDatepickerModule } from '@angular/material';
 import { FormsModule } from '@angular/forms';
 import { ShowBookingsComponent } from './components/ShowBookings/ShowBookings.component';
 import { StarRatingComponent } from './components/starRating/starRating.component';
